@@ -1,0 +1,320 @@
+
+cree un lien <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Manettes - Seydina Sarr</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://images.unsplash.com/photo-1607853202273-797f1c22a38e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: white;
+        }
+
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.7);
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: rgba(0, 0, 139, 0.7);
+            padding: 15px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: rgba(0, 191, 255, 0.5);
+        }
+
+        .container {
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        h1, h2 {
+            color: #00bfff;
+        }
+
+        /* Page Accueil */
+        .controllers {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .controller {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            padding: 20px;
+            width: 30%;
+            min-width: 250px;
+            margin-bottom: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .controller:hover {
+            transform: scale(1.05);
+        }
+
+        .controller img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00ff7f;
+            margin: 10px 0;
+        }
+
+        /* Page CV */
+        .cv {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cv-section {
+            margin-bottom: 20px;
+        }
+
+        .cv-section h3 {
+            border-bottom: 2px solid #00bfff;
+            padding-bottom: 5px;
+        }
+
+        /* Page Culture */
+        .baobab-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .baobab-item {
+            width: 45%;
+            margin-bottom: 20px;
+        }
+
+        .baobab-item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Page Hobbies */
+        .hobbies {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .hobby {
+            width: 45%;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .hobby img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .controllers {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .controller {
+                width: 80%;
+            }
+            
+            .baobab-item, .hobby {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <header>
+            <h1>Gaming Manettes</h1>
+            <p>Votre destination pour les meilleures manettes de jeu</p>
+        </header>
+
+        <nav>
+            <a href="#" onclick="showPage('accueil')">Accueil</a>
+            <a href="#" onclick="showPage('cv')">CV</a>
+            <a href="#" onclick="showPage('culture')">Culture</a>
+            <a href="#" onclick="showPage('hobbies')">Hobbies</a>
+        </nav>
+
+        <div class="container">
+            <!-- Page Accueil -->
+            <div id="accueil" class="page active">
+                <h2>Nos Manettes</h2>
+                <div class="controllers">
+                    <div class="controller">
+                        <img src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Manette PS4">
+                        <h3>Manette PS4</h3>
+                        <p>Manette DualShock 4 officielle Sony</p>
+                        <div class="price">35,000 FCFA</div>
+                    </div>
+                    <div class="controller">
+                        <img src="images/Manette PS4/Manette PS4.png" alt="Manette PS5">
+                        <h3>Manette PS5</h3>
+                        <p>Nouvelle manette DualSense pour PlayStation 5</p>
+                        <div class="price">45,000 FCFA</div>
+                    </div>
+                    <div class="controller">
+                        <img src="images/Manette PS5/Manette ps5.png" alt="Manette Custom">
+                        <h3>Manette Custom</h3>
+                        <p>Manette personnalisable selon vos goûts</p>
+                        <div class="price">50,000 FCFA</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Page CV -->
+            <div id="cv" class="page">
+                <div class="cv">
+                    <h2>Curriculum Vitae</h2>
+                    <div class="cv-section">
+                        <h3>Informations Personnelles</h3>
+                        <p><strong>Nom :</strong> Seydina Sarr</p>
+                        <p><strong>Email :</strong> sseydinasarr229@gmail.com</p>
+                        <p><strong>Téléphone :</strong> +221 XX XXX XX XX</p>
+                        <p><strong>Adresse :</strong> Dakar, Sénégal</p>
+                    </div>
+                    
+                    <div class="cv-section">
+                        <h3>Formation</h3>
+                        <p><strong>2020-2023 :</strong> Licence en Informatique - Université de Dakar</p>
+                        <p><strong>2017-2020 :</strong> Baccalauréat Scientifique - Lycée Blaise Diagne</p>
+                    </div>
+                    
+                    <div class="cv-section">
+                        <h3>Expérience Professionnelle</h3>
+                        <p><strong>2022-2023 :</strong> Stagiaire Développeur Web - Entreprise XYZ</p>
+                        <p><strong>2021 :</strong> Assistant Technicien Informatique - Cybercafé ABC</p>
+                    </div>
+                    
+                    <div class="cv-section">
+                        <h3>Compétences</h3>
+                        <p>HTML, CSS, JavaScript, PHP, MySQL</p>
+                        <p>Montage vidéo, Graphisme</p>
+                        <p>Maintenance informatique</p>
+                    </div>
+                    
+                    <div class="cv-section">
+                        <h3>Langues</h3>
+                        <p>Français - Courant</p>
+                        <p>Anglais - Intermédiaire</p>
+                        <p>Wolof - Langue maternelle</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page Culture -->
+            <div id="culture" class="page">
+                <h2>Culture Sénégalaise</h2>
+                <p>Le baobab, arbre emblématique du Sénégal, est un symbole de force et de longévité.</p>
+                
+                <div class="baobab-gallery">
+                    <div class="baobab-item">
+                        <img src="images/baobab sacré/image1.png" alt="Baobab au coucher du soleil">
+                        <p>Baobab au coucher du soleil</p>
+                    </div>
+                    <div class="baobab-item"
+                        <img src="images/baobab sacré/Images 2.png" alt="Baobab sacré"">
+                        <p>Baobab sacré de la région de Thiès</p>
+                 
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page Hobbies -->
+            <div id="hobbies" class="page">
+                <h2>Mes Passions</h2>
+                
+                <div class="hobbies">
+                    <div class="hobby">
+                        <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Football">
+                        <h3>Football</h3>
+                        <p>Je suis un grand passionné de football, surtout du championnat sénégalais et européen.</p>
+                    </div>
+                    
+                    <div class="hobby">
+                        <img src="https://images.unsplash.com/photo-1607853202273-797f1c22a38e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Jeux vidéo">
+                        <h3>Jeux vidéo</h3>
+                        <p>Je passe beaucoup de temps sur ma PS4 à jouer à des jeux comme FIFA, Call of Duty et God of War.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2023 Seydina Sarr - Tous droits réservés</p>
+        </footer>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // Masquer toutes les pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Afficher la page sélectionnée
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
